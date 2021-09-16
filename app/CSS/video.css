@@ -1,0 +1,12 @@
+/*高斯模糊+圆角+div外阴影
+background: rgba(120, 129, 147, 0.3); //透明
+box-shadow: 0 0 10px 0px #333; //div外阴影
+backdrop-filter: blur(10px); //高斯模糊
+position: relative; //相对定位
+    max-width: 800px; //最大宽度
+    width: 95%; //宽度的95%
+    padding: 45px 65px; //内边
+    border-radius: 10px; //圆角
+    color: #fff; //颜色
+    overflow: hidden; //超出div边界的删除
+*/

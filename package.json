@@ -1,0 +1,21 @@
+{
+  "name": "communication",
+  "version": "0.1.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "ElectronApplicationForCommunication"
+  },
+  "keywords": [
+    "Base-man525"
+  ],
+  "author": "Base-man525",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^14.0.1"
+  }
+}

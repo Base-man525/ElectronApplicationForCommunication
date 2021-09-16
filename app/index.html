@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href="./CSS/index.css">
+    <title>Base Communication</title>
+</head>
+<body>
+    <div class='container'>
+        <button id="Text" type='submit'>
+            <a href="./Text/text.html"  style="text-decoration-line: none;color:black;" id="textSrc">
+                <img src="./img/Text.jpg" alt="Loading Error" id="textImg">
+                <input name="text" style="width:0;height:0;border:0;margin:0;padding:0" value='text'>
+            </a>
+        </button>
+        <button id="Video" type='submit'>
+            <a href="./Video/video.html"  style="text-decoration-line: none;color:black;" id='videoSrc'>
+                <img src="./img/Video.jpg" alt="Loading Error" id="videoImg">
+                <input name="video" style="width:0;height:0;border:0;margin:0;padding:0" value='video'>
+            </a>
+        </button>
+    </div>
+    <script>
+        function $(id) { return document.getElementById(id);};
+        /*$("Text").onclick = function() {
+            $("Text").value = 0;
+            let element = document.createElement("script");
+            element.type = "text/javascript";
+            element.src = "./index.php"
+            document.body.appendChild(element);
+            delete element;
+        };
+        $("Video").onclick = function() {
+            $("Video").value = 0;
+            let element = document.createElement("script");
+            element.type = "text/javascript";
+            element.src = "./index.php"
+            document.body.appendChild(element);
+            delete element;
+        }*/
+    </script>
+</body>
+</html>

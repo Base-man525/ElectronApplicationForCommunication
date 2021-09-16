@@ -1,0 +1,25 @@
+#Text,
+#Video {
+    margin:10px;
+    border:0;
+    padding:0;
+    height:20%;
+    width:20%;
+}
+#textImg,
+#videoImg {
+    width:100%;
+    height:20%;
+}
+#textSrc,
+#videoSrc {
+    border:0;
+}
+a {
+    cursor: pointer;
+    border:0;
+    text-rendering:0;
+}
+/*
+ * @需求 <a></a>的大小不能控制，暂时无法解决; 缺少页面美化(记录于2021.09.16.21:17 开发版本:0.1.1)
+*/
