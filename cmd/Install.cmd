@@ -1,3 +1,4 @@
+echo off
 echo 请确保您已安装Node.js，您正处于Windows客户端
 pause
 npm install -g cnpm --registry=https://registry.npm.taobao.org %安装个cnpm%
