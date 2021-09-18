@@ -16,7 +16,7 @@
     $("startSocket").onclick = function click(number) { //监听点击事件，然后运行socket，这里用“贴标签”的形式调用socket.js
         console.log("函数被执行"); //For Developer
         var scriptElement = document.createElement('script');
-        scriptElement.type = 'text/javascript';
+        scriptElement.type = 'module'; //以module属性执行socket.js
         scriptElement.src = '../JS/socket.js';
         document.body.appendChild(scriptElement);
         delete scriptElement;

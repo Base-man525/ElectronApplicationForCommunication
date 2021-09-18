@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server",
+  "main": "webServer.js",
+  "scripts": {
+    "start": "nodemon webServer.js"
+  },
+  "author": "Base-man525",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io-client": "^4.2.0"
+  }
+}

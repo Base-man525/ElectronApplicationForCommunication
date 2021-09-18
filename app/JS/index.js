@@ -14,4 +14,4 @@ $("Video").onclick = function() {
     element.src = "./index.php"
     document.body.appendChild(element);
     delete element;
-}*/
+}*/ //备用方案，调用PHP来发起不同请求

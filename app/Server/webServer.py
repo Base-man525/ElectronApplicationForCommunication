@@ -7,6 +7,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(addr, "connected", "It send", c.recv(2048))
         while True:
             data = c.recv(1024)
-            #if not data:
-            #    break
+            if not data:
+                break
             c.sendall(data)
