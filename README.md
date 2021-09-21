@@ -9,4 +9,4 @@
 ## 预计什么时候推出？
 这个嘛...得看我时间, 因为我还有学业没搞定, 不过预计会在2022.9.16之前完工, 等着我的好消息吧
 ## 想要为我指出程序代码问题？亦或者想和我进行学术交流？
-[Base-man525 QQ](http://wpa.qq.com/msgrd?v=3&uin=1570915261&site=qq&menu=yes)
+[Base-man525 QQ](http://wpa.qq.com/msgrd?v=3&uin=337752715&site=qq&menu=yes)
