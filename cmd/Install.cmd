@@ -1,12 +1,8 @@
 echo off
-echo ÇëÈ·±£ÄúÒÑ°²×°Node.js£¬ÄúÕı´¦ÓÚWindows¿Í»§¶Ë
+echo ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½×°Node.jsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Windowsï¿½Í»ï¿½ï¿½ï¿½
 pause
-npm install -g cnpm --registry=https://registry.npm.taobao.org %°²×°¸öcnpm%
-cnpm sync connect %Í¬²½%
 cnpm install --save-dev electron
-cnpm install webSocket
-cnpm install express %socketÍ¨ĞÅ±ØÒªÄ£¿é%
-cnpm install socket.io %socketÍ¨ĞÅ±ØÒªÄ£¿é%
-npm install -global nodemon %·şÎñ¶ËÆô¶¯±ØÒªÃüÁî%
-cnpm install socket.io-client %socketÍ¨ĞÅ±ØÒªÄ£¿é%
-echo ÒÑ¾­°²×°Íê±Ï£¬¸ĞĞ»ÄúµÄÊ¹ÓÃÓëÖ§³Ö
+cd ..\Server\
+cnpm install socket.io
+cnpm install socket.io-client
+echo ï¿½Ñ¾ï¿½ï¿½ï¿½×°ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½

@@ -1,6 +1,7 @@
 echo off
+start .\cmd\InstallCMD.cmd
 start .\cmd\Install.cmd
 start .\cmd\runServer.cmd
 start .\cmd\runClient.cmd
-echo 安装成功
+echo 锟斤拷装锟缴癸拷
 pause
