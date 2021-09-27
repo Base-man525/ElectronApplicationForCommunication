@@ -1,2 +1,2 @@
-cd ..\app\Server
+cd .\app\Server
 npm start
