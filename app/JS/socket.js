@@ -1,4 +1,4 @@
-import { io } from "socket.io-client"
+import { io } from "socket.io-client" //这里出现问题，不能识别到socket.io-client此模块
 //目前为主要方案
 const socket = io("http://localhost:3000"); //WebSocket后的URL为http请求,3000端口为服务端应用占用端口
 // var wss = new WebSocket('wss://localhost:3000')

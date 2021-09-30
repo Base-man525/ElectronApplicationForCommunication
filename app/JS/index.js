@@ -1,4 +1,4 @@
-function $(id) { return document.getElementById(id);};
+function $(id) { return document.getElementById(id);}; //简化代码长度
 /*$("Text").onclick = function() {
     $("Text").value = 0;
     let element = document.createElement("script");
