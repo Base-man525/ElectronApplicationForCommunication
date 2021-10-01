@@ -11,4 +11,3 @@ cls
 start .\CmdForWindows\runClient.cmd
 pause
 cls
-pause
