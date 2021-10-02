@@ -16,6 +16,8 @@
   "author": "Base-man525",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "electron": "^15.0.0"
   },
   "dependencies": {}

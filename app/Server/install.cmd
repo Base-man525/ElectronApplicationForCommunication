@@ -1,1 +1,0 @@
-cnpm i socket.io -global

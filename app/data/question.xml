@@ -4,6 +4,7 @@
         <first>
             <path>./app/JS/socket.js</path>
             <infomation><![CDATA[socket.io-client模块不能被正确识别]]></infomation>
+            <solution><![CDATA[将原来的import { io } from "socket.io-client"改为const io = require("socket.io-client")]]></solution>
         </first>
         <second>
             <path>./app/Server</path>

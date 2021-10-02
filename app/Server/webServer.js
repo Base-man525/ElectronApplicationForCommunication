@@ -29,10 +29,10 @@
 //以上皆为备用方案
 const wss = require('socket.io')(3000, {
    cors: {
-      origin: ['http://localhost:8080']
+      origin: ['http://localhost:8080'] //8080端口为客户端占用端口
    }
-});
-wss.on('connected', socket => {
+})
+
+wss.on('connection', socket => {
     console.log(socket.id);
-    console.log(wss.readyState);
 })
