@@ -55,7 +55,6 @@ wss.on('connection', socket => {
     console.log(socket.id);
     socket.on('disconnect', reason => {
        console.log("客户端断开连接!\n");
-       console.log("原因", reason+"\n");
-       console.log("断开连接原因:", socketCmp(reason));
+       console.log(socket.id+"的断开连接原因:", socketCmp(reason));
     })
 })
