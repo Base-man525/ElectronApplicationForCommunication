@@ -33,6 +33,29 @@ const wss = require('socket.io')(3000, {
    }
 })
 
+function socketCmp(reason) {
+   if(reason == "transport error") {
+      return "Server -- 传输错误";
+   }
+   else if(reason == "server namespace disconnect") {
+      return "Server -- 服务端执行socket.disconnect();";
+   }
+   else if(reason == "client namespace disconnect") {
+      return "Client -- 从客户端获取断开数据包";
+   }
+   else if(reason == "ping timeout") {
+      return "Client -- 客户端在允许的时间内停止响应Ping（根据pingTimeout配置设置）";
+   }
+   else if(reason == "transport close") {
+      return "Client -- 客户端停止发送数据";
+   }
+}
+
 wss.on('connection', socket => {
     console.log(socket.id);
+    socket.on('disconnect', reason => {
+       console.log("客户端断开连接!\n");
+       console.log("原因", reason+"\n");
+       console.log("断开连接原因:", socketCmp(reason));
+    })
 })
