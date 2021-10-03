@@ -1,0 +1,1 @@
+cnpm i socket.io-client -D

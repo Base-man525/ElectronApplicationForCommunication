@@ -1,0 +1,1 @@
+cnpm i --save-dev electron
