@@ -1,6 +1,3 @@
-const ioi = require('socket.io-client');
-//目前为主要方案
-const socket = ioi("http://localhost:3000"); //WebSocket后的URL为http请求,3000端口为服务端应用占用端口
 //-----------------------------------------------------------------------------
 // var wss = new WebSocket('wss://localhost:3000')
 // // if(wss.readyState == WebSocket.OPEN) { /*readyState是WebSocket的一个API，readyState属性返回实例对象的当前状态，共有四种。
