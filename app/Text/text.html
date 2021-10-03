@@ -11,10 +11,9 @@
 <body>
     <h1>If you see this message, it means that your electron application is running successfully!</h1>
     <button id='startSocket'>Start socket</button><!--启动socket链接-->
-    <button id="endSocket">Close socket</button><!--关闭socket链接-->
     <script type="module">
         const ioi = require('socket.io-client');
-        // const socket = ioi("http://localhost:3000"); //WebSocket后的URL为http请求,3000端口为服务端应用占用端口
+        var socket;
         $("startSocket").onclick = function click() { //监听点击事件，然后运行socket，这里用“贴标签”的形式调用socket.js
             console.log("函数被执行"); //For Developer
             var inputIP = document.createElement('input');
@@ -26,18 +25,24 @@
             submitIP.innerText = "Submit";
             submitIP.id = "socketSubmitIP";
             document.body.appendChild(submitIP);
+            var endSocketIP = document.createElement('button');
+            endSocketIP.innerText = "Close socket";
+            endSocketIP.id = "endSocket";
+            endSocketIP.type = 'submit';
+            document.body.appendChild(endSocketIP);
             alert("Input Server IP address");
             $("socketSubmitIP").onclick = function submit() { 
-                const socket = ioi("http://"+inputIP.value+":3000");
-                console.log(inputIP.value); //For Developer
+                socket = ioi("http://"+inputIP.value+":3000");
+                console.log(inputIP.value);
             }
-            socket.connect();
-            inputIP.remove();
-            submitIP.remove();
-        }
-        $("endSocket").onclick = function endClick() {
-            console.log("结束socket函数执行"); //For Developer
-            socket.close();
+            $("endSocket").onclick = function endClick() {
+                console.log("结束socket函数执行");
+                socket.close();
+                $("socketInputIP").value = "";
+                $("socketInputIP").remove();
+                $("socketSubmitIP").remove();
+                $("endSocket").remove();
+            }
         }
     </script>
 </body>
