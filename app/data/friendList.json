@@ -1,0 +1,9 @@
+{
+    "IP": {
+        "Base-man525": "127.0.0.1",
+        "Base-man525A": "localhost"
+    },
+    "account": {
+        "Base-man525": "administrator"
+    }
+}

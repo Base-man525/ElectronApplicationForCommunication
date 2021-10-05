@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <ruleAboutFriendListJSON>
+        <first><![CDATA[根节点必须为用户名与IP]]]></first>
+        <second><![CDATA[IP必须加密]]></second>
+        <third><![CDATA[用户名后的值为用户名所属等级]]></third>
+        <fourth><![CDATA[IP开头为用户名，后方为IP，若有域名则另外存储一份域名]]></fourth>
+    </ruleAboutFriendListJSON>
+</root>

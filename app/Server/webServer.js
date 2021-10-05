@@ -1,3 +1,8 @@
+/**
+ * @author Base-man525
+ * @email 337752715@qq.com
+ * @copyright copyright 2021 © by Base-man525
+ */
 //  var socket = __import__('Socket', null, {}) //导入Socket library..
  
 //  var server = new socket.SocketServer('127.0.0.1', 8000) //创建一个Socket Server.
@@ -50,6 +55,7 @@ function socketCmp(reason) {
       return "Client -- 客户端停止发送数据";
    }
 }
+//socketCmp is for developers
 
 wss.on('connection', socket => {
     console.log(socket.id);
@@ -58,3 +64,4 @@ wss.on('connection', socket => {
        console.log(socket.id+"的断开连接原因:", socketCmp(reason));
     })
 })
+// console.log() just for developers

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type='text/css' href="../CSS/text.css">
     <script type="text/javascript" src="../JS/text.js"></script>
+    <script src="../JS/saveJSON.js"></script>
+    <script src='../JS/disposeJSON.js'></script>
     <title>Base Communication</title>
 </head>
 <body>
@@ -15,30 +17,30 @@
         const ioi = require('socket.io-client');
         var socket;
         $("startSocket").onclick = function click() { //监听点击事件，然后运行socket，这里用“贴标签”的形式调用socket.js
-            console.log("函数被执行"); //For Developer
             var inputIP = document.createElement('input');
             inputIP.type = 'text';
-            inputIP.id = "socketInputIP";
-            document.body.appendChild(inputIP);
+            inputIP.id = "InputIP";
             var submitIP = document.createElement('button');
             submitIP.type = 'submit';
             submitIP.innerText = "Submit";
             submitIP.id = "socketSubmitIP";
-            document.body.appendChild(submitIP);
             var endSocketIP = document.createElement('button');
             endSocketIP.innerText = "Close socket";
             endSocketIP.id = "endSocket";
             endSocketIP.type = 'submit';
+            document.body.appendChild(submitIP);
             document.body.appendChild(endSocketIP);
+            document.body.appendChild(inputIP);
+            console.log("函数被执行"); //For Developer
             alert("Input Server IP address");
             $("socketSubmitIP").onclick = function submit() { 
                 socket = ioi("http://"+inputIP.value+":3000");
                 console.log(inputIP.value);
+                readJSON();
             }
             $("endSocket").onclick = function endClick() {
                 console.log("结束socket函数执行");
                 socket.close();
-                $("socketInputIP").value = "";
                 $("socketInputIP").remove();
                 $("socketSubmitIP").remove();
                 $("endSocket").remove();
