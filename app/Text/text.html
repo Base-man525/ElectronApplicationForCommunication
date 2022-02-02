@@ -32,7 +32,6 @@
             document.body.appendChild(endSocketIP);
             document.body.appendChild(inputIP);
             console.log("函数被执行"); //For Developer
-            alert("Input Server IP address");
             $("socketSubmitIP").onclick = function submit() { 
                 socket = ioi("http://"+inputIP.value+":3000");
                 console.log(inputIP.value);
@@ -40,7 +39,7 @@
             }
             $("endSocket").onclick = function endClick() {
                 console.log("结束socket函数执行");
-                socket.close();
+                if(socket.connected) socket.close();
                 $("socketInputIP").remove();
                 $("socketSubmitIP").remove();
                 $("endSocket").remove();
