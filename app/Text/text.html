@@ -35,14 +35,14 @@
             $("socketSubmitIP").onclick = function submit() { 
                 socket = ioi("http://"+inputIP.value+":3000");
                 console.log(inputIP.value);
-                readJSON();
+                //readJSON();
             }
             $("endSocket").onclick = function endClick() {
                 console.log("结束socket函数执行");
                 if(socket.connected) socket.close();
-                $("socketInputIP").remove();
-                $("socketSubmitIP").remove();
-                $("endSocket").remove();
+                inputIP.remove();
+                submitIP.remove();
+                endSocketIP.remove();
             }
         }
     </script>

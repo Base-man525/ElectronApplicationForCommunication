@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <data>
-    <version>0.1.1DevBeta2.0</version>
+    <version>0.1.2DevAlpha1.6</version>
     <Contributors>
         <First githubHome="https://github.com/Base-man525" QQNumber="337752715" GMail="ericbase3@gmail.com" QQMail="337752715@qq.com" >Base-man525</First>
     </Contributors>
     <TheInitiator>Base-man525</TheInitiator>
     <infomation>
         <New>
-            <![CDATA[更新了基于TCP/IP流的通讯，即时通讯，目前只是IP连接，不存在号码链接]]>
+            <![CDATA[修复了关闭socket时不能将DOM一并删除的bug]]>
         </New>
     </infomation>
 </data>
