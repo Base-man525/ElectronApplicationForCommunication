@@ -8,34 +8,109 @@
     <script type="text/javascript" src="../JS/text.js"></script>
     <script src="../JS/saveJSON.js"></script>
     <script src='../JS/disposeJSON.js'></script>
+    <script type="text/javascript" src="../JS/vue.js"></script>
     <title>Base Communication</title>
 </head>
 <body>
     <h1>If you see this message, it means that your electron application is running successfully!</h1>
+    <div class="listAndScreens">
+        <ol id="list">
+            <li v-for="user of users"> {{ user.text }}</li>
+        </ol>
+        <div class="screens"></div>
+    </div>
     <button id='startSocket'>Start socket</button><!--启动socket链接-->
+    <script type="text/javascript">
+        var updateList = {
+            data() {
+                return {
+                    users: [
+                        { text: "index" }
+                    ]
+                }
+            },
+            methods: {
+                addElement: function(a) {
+                    this.users.push({ text: a });
+                }
+            }
+        };
+        var app = Vue.createApp(updateList).mount("#list");
+    </script>
     <script type="module">
         const ioi = require('socket.io-client');
         var socket;
+
+        function socketcmp() {
+            setTimeout(function (){
+                //if(socket.connected)
+                //{
+                    var messageInput = build("input");
+                    messageInput.type = "text";
+                    messageInput.innerText = '1';
+                    messageInput.id="messageInput";
+
+                    var messageSubmit = build("button");
+                    messageSubmit.type = "submit";
+                    messageSubmit.innerText = "send";
+                    messageSubmit.id="messageSubmit";
+
+                    var newSocketIP = build('input');
+                    var newSocketIP2 = build('button');
+                    newSocketIP2.innerText = "New Socket";
+                    newSocketIP2.id = "newSocket";
+                    newSocketIP2.type = 'submit';
+                    newSocketIP.id = "newSocketInput";
+                    newSocketIP.type = 'text';
+
+                    add(messageInput);
+                    add(messageSubmit);
+                    add(newSocketIP);
+                    add(newSocketIP2);
+
+                    $("messageSubmit").onclick = function clicked() {
+                        socket.emit("clientToServer", messageInput.value);
+                    }
+                    $("newSocket").onclick = function createElement() {
+                        app.addElement($("newSocketInput").value);
+                    }
+            }/*}*/, 1000);
+        }
+
+        function socketlistenEmit() {
+            setTimeout(function (){
+                socket.on("serverToClient", inner => {
+                    console.log(inner); //For Developer
+                })
+            }, 1000);
+        }
+
         $("startSocket").onclick = function click() { //监听点击事件，然后运行socket，这里用“贴标签”的形式调用socket.js
-            var inputIP = document.createElement('input');
+            var inputIP = build('input');
             inputIP.type = 'text';
             inputIP.id = "InputIP";
-            var submitIP = document.createElement('button');
+
+            var submitIP = build('button');
             submitIP.type = 'submit';
             submitIP.innerText = "Submit";
             submitIP.id = "socketSubmitIP";
-            var endSocketIP = document.createElement('button');
+
+            var endSocketIP = build('button');
             endSocketIP.innerText = "Close socket";
             endSocketIP.id = "endSocket";
             endSocketIP.type = 'submit';
-            document.body.appendChild(submitIP);
-            document.body.appendChild(endSocketIP);
-            document.body.appendChild(inputIP);
+
+            add(submitIP);
+            add(endSocketIP);
+            add(inputIP);
+
             console.log("函数被执行"); //For Developer
-            $("socketSubmitIP").onclick = function submit() { 
+            $("socketSubmitIP").onclick = function submit() {
                 socket = ioi("http://"+inputIP.value+":3000");
                 console.log(inputIP.value);
                 //readJSON();
+                socketcmp(); //异步执行，给足时间让socket.connected进行准备
+                socketlistenEmit();
             }
             $("endSocket").onclick = function endClick() {
                 console.log("结束socket函数执行");
@@ -43,12 +118,14 @@
                 inputIP.remove();
                 submitIP.remove();
                 endSocketIP.remove();
+                messageInput.remove();
+                messageSubmit.remove();
             }
         }
     </script>
 </body>
 <!-- <script>
-    
+
     // if(flag == 1) {
     //     delete click();
     // }

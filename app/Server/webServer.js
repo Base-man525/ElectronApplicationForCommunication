@@ -4,9 +4,9 @@
  * @copyright copyright 2021 © by Base-man525
  */
 //  var socket = __import__('Socket', null, {}) //导入Socket library..
- 
+
 //  var server = new socket.SocketServer('127.0.0.1', 8000) //创建一个Socket Server.
- 
+
 //  server.on('listen', function(server) {  //加入服务器开始监听的事件
 //     print('Event listen on server:' + server.localAddress + ', port:' + server.localPort)
 //  })
@@ -17,7 +17,7 @@
 //     print('Event closed on server')
 //  })
 
- 
+
 //  server.on('accept', function(client){   // 一个新的client连接
 //     print('new client:' + client.address + ', port:' + client.port)
 //     client.on('read', function(s) {   //clinet的有数据可读。
@@ -62,6 +62,10 @@ wss.on('connection', socket => {
     socket.on('disconnect', reason => {
        console.log("客户端断开连接!\n");
        console.log(socket.id+"的断开连接原因:", socketCmp(reason));
+    })
+    socket.on("clientToServer", inner => {
+       console.log(inner);
+       wss.emit("serverToClient", inner);
     })
 })
 // console.log() just for developers

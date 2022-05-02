@@ -9,6 +9,7 @@
   "author": "Base-man525",
   "license": "ISC",
   "dependencies": {
+    "socket.io": "^4.4.1",
     "socket.io-client": "^4.2.0"
   }
 }
