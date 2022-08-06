@@ -20,7 +20,7 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <?php 
+    <?php
         switch($url)
         {
             case 'text':
@@ -36,3 +36,5 @@
     </noframes>
 </body>
 </html>
+
+<!-- Path: ./app/index.php-->

@@ -3,3 +3,5 @@
 // git clone https://github.com/node-ffi/node-ffi & cd node-ffi
 // node-gyp rebuild --target=v8.9.3 --arch=x64 --dist-url=https://npm.taobao.org/mirrors/node
 // cnpm install --save-dev electron-packager -g //打包electron成exe的组件
+
+// Path: ./Step
